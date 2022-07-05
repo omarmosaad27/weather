@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --background-color:#ecf0f1;
+    --main-color:#3498db;
+    --black-color:#333;
+}
+body{
+    background: #fffff8;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#app{
+    width: 500px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px auto;
+    background-color:var(--background-color) ;
+    padding: 2rem 0.5rem;
+    gap: 20px;
+}
+
+.heading{
+    font-size: 1.4rem;
+    color: var(--main-color);
+
+}
+.holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 10px;
+
+}
+.holder label{
+    letter-spacing: 2px;
+    color: var(--black-color);
+}
+.holder input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 0.3rem 0.2rem ;
+    text-transform: capitalize;
+}
+.holder textarea{
+    width: 100%;
+    height: 60px;
+    border: none;
+    outline: none;
+    padding: 0.3rem 0.2rem ;
+    text-transform: capitalize;
+}
+.generate{
+    background-color: var(--main-color);
+    color: white;
+    padding: 0.5rem 0.7rem ;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.entry{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.title{
+    font-size: 1rem;
+    color: var(--main-color);
+}
+.entryHolder{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+.date{
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: var(--black-color);
+}
+.temp{
+    font-size: 1.4rem;
+    color: var(--main-color);
+    font-weight: bold;
+
+}
+.content{
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: var(--black-color);
+    text-transform: capitalize;
+}
