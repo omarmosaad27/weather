@@ -30,7 +30,7 @@ function listening() {
     console.log(`server listening on port ${port}`);
 }
 
-
+// function to destructure data received and add it as anew entry to endpoint
 function addDataToServer(req,res) {
     const newEntry = {
         temp: req.body.temp,
@@ -41,10 +41,12 @@ function addDataToServer(req,res) {
     console.log(projectData);
     res.send(projectData)
 }
+// post route 
 app.post("/addNewData", addDataToServer)
 
-
+// when we call serverData Route we will send project data to the client side 
 function retrieveData(req, res) {
     res.send(projectData)
 }
+// get route
 app.get('/serverData',retrieveData)

@@ -1,6 +1,7 @@
 /* Global Variables */
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?zip="
 const apiKey = "&appid=1f11b28f69fa1eca8b5d113e368d6c55&units=imperial"
+// dom elements 
 let dateDiv = document.querySelector("#date")
 let tempDiv = document.querySelector("#temp")
 let feelingsDiv = document.querySelector("#content")
@@ -14,19 +15,20 @@ document.querySelector("#generate").addEventListener("click", weatherApp)
 function weatherApp() {
     // Create date
     let date = new Date();
-    let newDate = date.getMonth()+1 + '.' + date.getDate() + '.' + date.getFullYear();
+    let newDate = date.getMonth() + 1 + '.' + date.getDate() + '.' + date.getFullYear();
+    // input values
     const zipInputValue = document.querySelector("#zip").value;
     const userFeelingsValue = document.querySelector("#feelings").value;
     const finalUrl = `${apiUrl}${zipInputValue}${apiKey}`
-    // 3 function to fetch api 
+    // 3 calling function to fetch api 
     fetchDataFromApi(finalUrl)
-        
+        // after fetching data we have two steps 1- add data to our server 2- get data from server and add it to dom elements above
         .then(function (data) {
         
-            // 5 function to post data to server 
+            // 5 function to add data to server 
             addDataToServer('/addNewData', { temp: data.main.temp, date: newDate, feelings: userFeelingsValue })
 
-            // 7 function to get data from server and update ui
+            // 7 function to retrieve data from server and update ui
             retrieveDataFromServer()
         }).catch(error => console.log(error));
     
@@ -46,7 +48,7 @@ async function fetchDataFromApi(finalUrl) {
     }
 }
 
-// 6 function to add received to our server 
+// 6 function to add received data to our server 
 
 async function addDataToServer (url = "", data = {}) {
     try {
